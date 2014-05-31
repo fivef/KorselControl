@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical">
+    
+            <TextView android:text="@string/settingsThreshold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/threshold_label"></TextView>
+            <SeekBar android:layout_width="match_parent" android:id="@+id/threshold_seekbar" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="5dp" android:max="255" android:progressDrawable="@drawable/blackprogress" android:thumb="@drawable/thumb"></SeekBar>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/settingsSensitivityPitch" android:id="@+id/sensitivity_pitch_label" ></TextView>
+            <SeekBar  android:layout_gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/sensitivity_pitch_seekbar" android:max="9" android:progressDrawable="@drawable/blackprogress" android:thumb="@drawable/thumb"></SeekBar>
+            <TextView android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_width="wrap_content" android:text="@string/settingsSensitivityRoll" android:id="@+id/sensitivity_roll_label"></TextView>
+            <SeekBar android:layout_gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/sensitivity_roll_seekbar" android:max="9" android:progressDrawable="@drawable/blackprogress" android:thumb="@drawable/thumb"></SeekBar>
+            <LinearLayout android:layout_height="wrap_content" android:id="@+id/buttonsLayout" android:layout_width="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="20dp">
+                <Button android:id="@+id/settingsOK" android:layout_height="wrap_content" android:text="@string/settingsOK" android:layout_width="80dp"></Button>
+                <Button android:id="@+id/settingsDefault" android:layout_height="wrap_content" android:text="@string/settingsDefault" android:layout_width="80dp"></Button>
+            </LinearLayout>
+
+    
+</LinearLayout>

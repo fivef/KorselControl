@@ -1,0 +1,107 @@
+\hypertarget{classV24Control}{
+\section{V24Control Class Reference}
+\label{classV24Control}\index{V24Control@{V24Control}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classV24Control_af971d772b2daecf8942365353783809b}{V24Control} ()
+\item 
+\hyperlink{classV24Control_ada8ccdf9100c10349168771ebe36f1b8}{$\sim$V24Control} ()
+\item 
+void \hyperlink{classV24Control_a49443fc1fd0e558a7f68e789f77ad395}{init} ()
+\item 
+void \hyperlink{classV24Control_acd0f18436fe727454a73e8a2126a4a9b}{processCommand} ()
+\item 
+bool \hyperlink{classV24Control_a609f809ccf8aaaa053bef3465a01f0c0}{newDataReceived} ()
+\item 
+int \hyperlink{classV24Control_a2ab55f831389bb8b0650927dc94161fb}{getNewMainMode} (int oldMainMode)
+\item 
+void \hyperlink{classV24Control_a7d6eb4fd5d0959dab03087e6a9ea022d}{transmit} (unsigned char data)
+\item 
+bool \hyperlink{classV24Control_abc9a1bae7750d4db8ded613ea02712db}{receive} (unsigned char $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classV24Control_af971d772b2daecf8942365353783809b}{
+\index{V24Control@{V24Control}!V24Control@{V24Control}}
+\index{V24Control@{V24Control}!V24Control@{V24Control}}
+\subsubsection[{V24Control}]{\setlength{\rightskip}{0pt plus 5cm}V24Control::V24Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_af971d772b2daecf8942365353783809b}
+global objects which are used by the interrupt function SIGNAL(SIG\_\-UART\_\-RECV) constructor \hypertarget{classV24Control_ada8ccdf9100c10349168771ebe36f1b8}{
+\index{V24Control@{V24Control}!$\sim$V24Control@{$\sim$V24Control}}
+\index{$\sim$V24Control@{$\sim$V24Control}!V24Control@{V24Control}}
+\subsubsection[{$\sim$V24Control}]{\setlength{\rightskip}{0pt plus 5cm}V24Control::$\sim$V24Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_ada8ccdf9100c10349168771ebe36f1b8}
+destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classV24Control_a2ab55f831389bb8b0650927dc94161fb}{
+\index{V24Control@{V24Control}!getNewMainMode@{getNewMainMode}}
+\index{getNewMainMode@{getNewMainMode}!V24Control@{V24Control}}
+\subsubsection[{getNewMainMode}]{\setlength{\rightskip}{0pt plus 5cm}int V24Control::getNewMainMode (
+\begin{DoxyParamCaption}
+\item[{int}]{ oldMainMode}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_a2ab55f831389bb8b0650927dc94161fb}
+returns a new main mode (if available) and reset's the internal newMainMode variable. If no newMainMode is set, the oldMainMode is returned \hypertarget{classV24Control_a49443fc1fd0e558a7f68e789f77ad395}{
+\index{V24Control@{V24Control}!init@{init}}
+\index{init@{init}!V24Control@{V24Control}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void V24Control::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_a49443fc1fd0e558a7f68e789f77ad395}
+initializes the serial interface according to baud-\/rate MYUBRR, 1 stop bit and no parity bit \hypertarget{classV24Control_a609f809ccf8aaaa053bef3465a01f0c0}{
+\index{V24Control@{V24Control}!newDataReceived@{newDataReceived}}
+\index{newDataReceived@{newDataReceived}!V24Control@{V24Control}}
+\subsubsection[{newDataReceived}]{\setlength{\rightskip}{0pt plus 5cm}bool V24Control::newDataReceived (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_a609f809ccf8aaaa053bef3465a01f0c0}
+returns true if new data arrived in USART buffer, otherwise zero \hypertarget{classV24Control_acd0f18436fe727454a73e8a2126a4a9b}{
+\index{V24Control@{V24Control}!processCommand@{processCommand}}
+\index{processCommand@{processCommand}!V24Control@{V24Control}}
+\subsubsection[{processCommand}]{\setlength{\rightskip}{0pt plus 5cm}void V24Control::processCommand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_acd0f18436fe727454a73e8a2126a4a9b}
+process command \hypertarget{classV24Control_abc9a1bae7750d4db8ded613ea02712db}{
+\index{V24Control@{V24Control}!receive@{receive}}
+\index{receive@{receive}!V24Control@{V24Control}}
+\subsubsection[{receive}]{\setlength{\rightskip}{0pt plus 5cm}bool V24Control::receive (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_abc9a1bae7750d4db8ded613ea02712db}
+function receives one byte from the serial interface and writes it to $\ast$data (low-\/level) \hypertarget{classV24Control_a7d6eb4fd5d0959dab03087e6a9ea022d}{
+\index{V24Control@{V24Control}!transmit@{transmit}}
+\index{transmit@{transmit}!V24Control@{V24Control}}
+\subsubsection[{transmit}]{\setlength{\rightskip}{0pt plus 5cm}void V24Control::transmit (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classV24Control_a7d6eb4fd5d0959dab03087e6a9ea022d}
+transmits a byte on the serial interface (low level) 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\-attiny2313/src/V24Control.h\item 
+/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\-attiny2313/src/V24Control.c\end{DoxyCompactItemize}

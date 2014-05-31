@@ -1,0 +1,40 @@
+#!/bin/bash
+
+TARGET=bin/Korsel_BT
+TARGET_HEX=bin/Korsel_BT.hex
+#CPU=atmega32
+CPU=attiny2313
+BIN=/usr/bin/uisp 
+
+make
+
+#INTERFACE="-dprog=dapa -dlpt=/dev/parport0"
+OPTIONS=" -dprog=dasa2 -dserial=/dev/ttyS0 "
+
+## remove linker table
+COMMAND="avr-strip ${TARGET}"
+echo $COMMAND
+$COMMAND
+
+## generate hexfile
+#COMMAND="avr-objcopy -j .text -j .data -O ihex ${TARGET} ${TARGET_HEX}"
+COMMAND="avr-objcopy -j .text -R .eeprom -j .data -O ihex ${TARGET} ${TARGET_HEX}"
+echo $COMMAND
+$COMMAND
+
+# output of memory usage
+COMMAND="avr-size --format=sysv ${TARGET}"
+echo $COMMAND
+$COMMAND
+
+
+## 
+CONTR_AVAILABLE=`${BIN} $OPTIONS --rd_fuses 2>/dev/null >/dev/null && echo 1 || echo 0`
+#CONTR_AVAILABLE=1
+echo "Controller: ${CONTR_AVAILABLE}"
+
+
+if [ $CONTR_AVAILABLE -eq 1 ]; then
+	
+	avrdude -c ponyser -p attiny2313 -P /dev/ttyS0 -U flash:w:${TARGET_HEX}
+fi	

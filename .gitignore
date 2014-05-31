@@ -12,6 +12,8 @@
 bin/
 gen/
 
+.svn/
+
 # Gradle files
 .gradle/
 build/

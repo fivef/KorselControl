@@ -1,0 +1,367 @@
+\hypertarget{Korsel__BT_8c}{
+\section{/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\-attiny2313/src/Korsel\_\-BT.c File Reference}
+\label{Korsel__BT_8c}\index{/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\-attiny2313/src/Korsel\_\-BT.c@{/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\-attiny2313/src/Korsel\_\-BT.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include \char`\"{}v24\_\-commands.h\char`\"{}}\par
+{\ttfamily \#include $<$util/delay.h$>$}\par
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structV24Command}{V24Command}
+\begin{DoxyCompactList}\small\item\em Command struct consisting of header and data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Korsel__BT_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\_\-CPU}~4000000UL
+\begin{DoxyCompactList}\small\item\em Define CPU frequency. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{Korsel__BT_8c_ab54b68a1ee096155399ca2ee8bf5362e}{USART\_\-BAUD\_\-RATE}~9600
+\begin{DoxyCompactList}\small\item\em Debug Mode. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{Korsel__BT_8c_af5d18045203a2499a4844f47cf2e193e}{V24\_\-UBRR}~(F\_\-CPU/(USART\_\-BAUD\_\-RATE$\ast$8L)-\/1)
+\begin{DoxyCompactList}\small\item\em Calculate and define UBRR. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{Korsel__BT_8c_a73babaa7db68fbffea1acf6d865f435c}{PWM\_\-motor\_\-left}~OCR1A
+\item 
+\#define \hyperlink{Korsel__BT_8c_a1d4a544af2c321ed1a83ee76e0db2cee}{PWM\_\-motor\_\-right}~OCR1B
+\item 
+\#define \hyperlink{Korsel__BT_8c_a85de374aecd3b7aa7daf986cbecd51ad}{motor\_\-right\_\-direction}~PB1
+\item 
+\#define \hyperlink{Korsel__BT_8c_ac47b3b9c3080677199ad04e2abe3bbe0}{motor\_\-left\_\-direction}~PB2
+\item 
+\#define \hyperlink{Korsel__BT_8c_a95855eaf9cee62de5402f124b1b8a27b}{RXD}~PD0
+\item 
+\#define \hyperlink{Korsel__BT_8c_a0466ccb605cb0395fb03b72f476ec855}{TXD}~PD1
+\item 
+\#define \hyperlink{Korsel__BT_8c_a9a143588e075c0e3fc8131b7adab944c}{photo\_\-sensor}~PD2
+\item 
+\#define \hyperlink{Korsel__BT_8c_ae4b82b8253877ff87a7583a662b8a85e}{button\_\-top}~PD3
+\item 
+\#define \hyperlink{Korsel__BT_8c_a812b344ccfd3d1614fb5aef444c1ea8e}{button\_\-left}~PD4
+\item 
+\#define \hyperlink{Korsel__BT_8c_a6596487ab05058eb9e5c0a5a7308d6c6}{button\_\-right}~PD5
+\item 
+\#define \hyperlink{Korsel__BT_8c_adfc226666716d4b58fc8488a85ad1983}{button\_\-middle}~PD6
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structV24Command}{V24Command} \hyperlink{Korsel__BT_8c_ae89754a89c35713573eb2a2124fc4699}{V24COMMAND}
+\begin{DoxyCompactList}\small\item\em Command struct consisting of header and data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Korsel__BT_8c_a0a7500cb71e3070b5eefb6c66b4b0ede}{init\_\-io} (void)
+\begin{DoxyCompactList}\small\item\em initialize IO ports \item\end{DoxyCompactList}\item 
+void \hyperlink{Korsel__BT_8c_a341d33c536d663703208ab568f7d1e0e}{delay} (void)
+\begin{DoxyCompactList}\small\item\em delay of 100 ms \item\end{DoxyCompactList}\item 
+void \hyperlink{Korsel__BT_8c_ab742228d6d04b513d540ef5278e514f5}{pwm} (void)
+\begin{DoxyCompactList}\small\item\em Initialize motor outputs as PWM (pulse width modulation). \item\end{DoxyCompactList}\item 
+void \hyperlink{Korsel__BT_8c_a2d6dfeece07c24153617ed94e3c41366}{setup\_\-interrupt} (void)
+\begin{DoxyCompactList}\small\item\em Initialize interrupts. \item\end{DoxyCompactList}\item 
+void \hyperlink{Korsel__BT_8c_af77d0bef7a9606d372dc7d621f3bce72}{USART\_\-Init} ()
+\begin{DoxyCompactList}\small\item\em Initialize USART for serial communication. \item\end{DoxyCompactList}\item 
+void \hyperlink{Korsel__BT_8c_ab8c416106cf1aff4ccdb3da4860fc179}{USART\_\-Transmit} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Transmit a char on USART. \item\end{DoxyCompactList}\item 
+void \hyperlink{Korsel__BT_8c_a5dd3a8989f2fe0688e6690705d753f0e}{USART\_\-Transmit\_\-Command} (\hyperlink{structV24Command}{V24COMMAND} $\ast$command)
+\begin{DoxyCompactList}\small\item\em Transmit a package consisting of a header and a value on USART. \item\end{DoxyCompactList}\item 
+void \hyperlink{Korsel__BT_8c_aaad9fc771fb8f4348cd2f2a11e0399e9}{Stop\_\-Motor} ()
+\begin{DoxyCompactList}\small\item\em If a contact button is pressed this method is called Resets motor speed to 0 and sends a \char`\"{}button pressed\char`\"{} command. \item\end{DoxyCompactList}\item 
+\hyperlink{Korsel__BT_8c_afea150fcd685610cb9f7672fce361e53}{ISR} (INT0\_\-vect)
+\begin{DoxyCompactList}\small\item\em ISR for photo sensor. \item\end{DoxyCompactList}\item 
+\hyperlink{Korsel__BT_8c_a09ce999e15ad60b8a3f07d08af1946f9}{ISR} (USART\_\-RX\_\-vect)
+\begin{DoxyCompactList}\small\item\em ISR for USART receive. \item\end{DoxyCompactList}\item 
+int \hyperlink{Korsel__BT_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\begin{DoxyCompactList}\small\item\em Main function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{Korsel__BT_8c_a7432312cb69c802bd3e59006f0325c50}{LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected} = false
+\begin{DoxyCompactList}\small\item\em true if last package received was the protocol header LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD \item\end{DoxyCompactList}\item 
+bool \hyperlink{Korsel__BT_8c_ad28d914a812dcb1f811412562d752698}{LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected} = false
+\begin{DoxyCompactList}\small\item\em true if last package received was the protocol header LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD \item\end{DoxyCompactList}\item 
+bool \hyperlink{Korsel__BT_8c_a6dc3e377f49c2dea6f0f3e82020a798d}{RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected} = false
+\begin{DoxyCompactList}\small\item\em true if last package received was the protocol header RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD \item\end{DoxyCompactList}\item 
+bool \hyperlink{Korsel__BT_8c_a971bcbb01204fee2d69c098b337f2da7}{RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected} = false
+\begin{DoxyCompactList}\small\item\em true if last package received was the protocol header RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{Korsel__BT_8c_a812b344ccfd3d1614fb5aef444c1ea8e}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!button\_\-left@{button\_\-left}}
+\index{button\_\-left@{button\_\-left}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{button\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}\#define button\_\-left~PD4}}
+\label{Korsel__BT_8c_a812b344ccfd3d1614fb5aef444c1ea8e}
+\hypertarget{Korsel__BT_8c_adfc226666716d4b58fc8488a85ad1983}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!button\_\-middle@{button\_\-middle}}
+\index{button\_\-middle@{button\_\-middle}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{button\_\-middle}]{\setlength{\rightskip}{0pt plus 5cm}\#define button\_\-middle~PD6}}
+\label{Korsel__BT_8c_adfc226666716d4b58fc8488a85ad1983}
+\hypertarget{Korsel__BT_8c_a6596487ab05058eb9e5c0a5a7308d6c6}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!button\_\-right@{button\_\-right}}
+\index{button\_\-right@{button\_\-right}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{button\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}\#define button\_\-right~PD5}}
+\label{Korsel__BT_8c_a6596487ab05058eb9e5c0a5a7308d6c6}
+\hypertarget{Korsel__BT_8c_ae4b82b8253877ff87a7583a662b8a85e}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!button\_\-top@{button\_\-top}}
+\index{button\_\-top@{button\_\-top}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{button\_\-top}]{\setlength{\rightskip}{0pt plus 5cm}\#define button\_\-top~PD3}}
+\label{Korsel__BT_8c_ae4b82b8253877ff87a7583a662b8a85e}
+\hypertarget{Korsel__BT_8c_a43bafb28b29491ec7f871319b5a3b2f8}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!F\_\-CPU@{F\_\-CPU}}
+\index{F\_\-CPU@{F\_\-CPU}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{F\_\-CPU}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\_\-CPU~4000000UL}}
+\label{Korsel__BT_8c_a43bafb28b29491ec7f871319b5a3b2f8}
+
+
+Define CPU frequency. 
+
+\hypertarget{Korsel__BT_8c_ac47b3b9c3080677199ad04e2abe3bbe0}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!motor\_\-left\_\-direction@{motor\_\-left\_\-direction}}
+\index{motor\_\-left\_\-direction@{motor\_\-left\_\-direction}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{motor\_\-left\_\-direction}]{\setlength{\rightskip}{0pt plus 5cm}\#define motor\_\-left\_\-direction~PB2}}
+\label{Korsel__BT_8c_ac47b3b9c3080677199ad04e2abe3bbe0}
+\hypertarget{Korsel__BT_8c_a85de374aecd3b7aa7daf986cbecd51ad}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!motor\_\-right\_\-direction@{motor\_\-right\_\-direction}}
+\index{motor\_\-right\_\-direction@{motor\_\-right\_\-direction}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{motor\_\-right\_\-direction}]{\setlength{\rightskip}{0pt plus 5cm}\#define motor\_\-right\_\-direction~PB1}}
+\label{Korsel__BT_8c_a85de374aecd3b7aa7daf986cbecd51ad}
+\hypertarget{Korsel__BT_8c_a9a143588e075c0e3fc8131b7adab944c}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!photo\_\-sensor@{photo\_\-sensor}}
+\index{photo\_\-sensor@{photo\_\-sensor}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{photo\_\-sensor}]{\setlength{\rightskip}{0pt plus 5cm}\#define photo\_\-sensor~PD2}}
+\label{Korsel__BT_8c_a9a143588e075c0e3fc8131b7adab944c}
+\hypertarget{Korsel__BT_8c_a73babaa7db68fbffea1acf6d865f435c}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!PWM\_\-motor\_\-left@{PWM\_\-motor\_\-left}}
+\index{PWM\_\-motor\_\-left@{PWM\_\-motor\_\-left}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{PWM\_\-motor\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}\#define PWM\_\-motor\_\-left~OCR1A}}
+\label{Korsel__BT_8c_a73babaa7db68fbffea1acf6d865f435c}
+\hypertarget{Korsel__BT_8c_a1d4a544af2c321ed1a83ee76e0db2cee}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!PWM\_\-motor\_\-right@{PWM\_\-motor\_\-right}}
+\index{PWM\_\-motor\_\-right@{PWM\_\-motor\_\-right}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{PWM\_\-motor\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}\#define PWM\_\-motor\_\-right~OCR1B}}
+\label{Korsel__BT_8c_a1d4a544af2c321ed1a83ee76e0db2cee}
+\hypertarget{Korsel__BT_8c_a95855eaf9cee62de5402f124b1b8a27b}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!RXD@{RXD}}
+\index{RXD@{RXD}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{RXD}]{\setlength{\rightskip}{0pt plus 5cm}\#define RXD~PD0}}
+\label{Korsel__BT_8c_a95855eaf9cee62de5402f124b1b8a27b}
+\hypertarget{Korsel__BT_8c_a0466ccb605cb0395fb03b72f476ec855}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!TXD@{TXD}}
+\index{TXD@{TXD}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{TXD}]{\setlength{\rightskip}{0pt plus 5cm}\#define TXD~PD1}}
+\label{Korsel__BT_8c_a0466ccb605cb0395fb03b72f476ec855}
+\hypertarget{Korsel__BT_8c_ab54b68a1ee096155399ca2ee8bf5362e}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!USART\_\-BAUD\_\-RATE@{USART\_\-BAUD\_\-RATE}}
+\index{USART\_\-BAUD\_\-RATE@{USART\_\-BAUD\_\-RATE}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{USART\_\-BAUD\_\-RATE}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-BAUD\_\-RATE~9600}}
+\label{Korsel__BT_8c_ab54b68a1ee096155399ca2ee8bf5362e}
+
+
+Debug Mode. 
+
+\hypertarget{Korsel__BT_8c_af5d18045203a2499a4844f47cf2e193e}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!V24\_\-UBRR@{V24\_\-UBRR}}
+\index{V24\_\-UBRR@{V24\_\-UBRR}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{V24\_\-UBRR}]{\setlength{\rightskip}{0pt plus 5cm}\#define V24\_\-UBRR~(F\_\-CPU/(USART\_\-BAUD\_\-RATE$\ast$8L)-\/1)}}
+\label{Korsel__BT_8c_af5d18045203a2499a4844f47cf2e193e}
+
+
+Calculate and define UBRR. 
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{Korsel__BT_8c_ae89754a89c35713573eb2a2124fc4699}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!V24COMMAND@{V24COMMAND}}
+\index{V24COMMAND@{V24COMMAND}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{V24COMMAND}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf V24Command}  {\bf V24COMMAND}}}
+\label{Korsel__BT_8c_ae89754a89c35713573eb2a2124fc4699}
+
+
+Command struct consisting of header and data. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{Korsel__BT_8c_a341d33c536d663703208ab568f7d1e0e}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!delay@{delay}}
+\index{delay@{delay}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{delay}]{\setlength{\rightskip}{0pt plus 5cm}void delay (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_a341d33c536d663703208ab568f7d1e0e}
+
+
+delay of 100 ms 
+
+\hypertarget{Korsel__BT_8c_a0a7500cb71e3070b5eefb6c66b4b0ede}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!init\_\-io@{init\_\-io}}
+\index{init\_\-io@{init\_\-io}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{init\_\-io}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-io (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_a0a7500cb71e3070b5eefb6c66b4b0ede}
+
+
+initialize IO ports 
+
+\hypertarget{Korsel__BT_8c_afea150fcd685610cb9f7672fce361e53}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{INT0\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_afea150fcd685610cb9f7672fce361e53}
+
+
+ISR for photo sensor. 
+
+this ISR is called if the photo sensor state changes from white to black or from black to white \hypertarget{Korsel__BT_8c_a09ce999e15ad60b8a3f07d08af1946f9}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{USART\_\-RX\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_a09ce999e15ad60b8a3f07d08af1946f9}
+
+
+ISR for USART receive. 
+
+A command consists of two chars. The first one ist the header and the second one the speed value. The first time the ISR is called the char is read from the UDR. If a header was detected the headerDetected Flag is set. The next time the ISR is called the char read from UDR is a value for motor speed. \hypertarget{Korsel__BT_8c_a840291bc02cba5474a4cb46a9b9566fe}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!main@{main}}
+\index{main@{main}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Main function. 
+
+Initializations and main loop \hypertarget{Korsel__BT_8c_ab742228d6d04b513d540ef5278e514f5}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!pwm@{pwm}}
+\index{pwm@{pwm}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{pwm}]{\setlength{\rightskip}{0pt plus 5cm}void pwm (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_ab742228d6d04b513d540ef5278e514f5}
+
+
+Initialize motor outputs as PWM (pulse width modulation). 
+
+\hypertarget{Korsel__BT_8c_a2d6dfeece07c24153617ed94e3c41366}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!setup\_\-interrupt@{setup\_\-interrupt}}
+\index{setup\_\-interrupt@{setup\_\-interrupt}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{setup\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void setup\_\-interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_a2d6dfeece07c24153617ed94e3c41366}
+
+
+Initialize interrupts. 
+
+\hypertarget{Korsel__BT_8c_aaad9fc771fb8f4348cd2f2a11e0399e9}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!Stop\_\-Motor@{Stop\_\-Motor}}
+\index{Stop\_\-Motor@{Stop\_\-Motor}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{Stop\_\-Motor}]{\setlength{\rightskip}{0pt plus 5cm}void Stop\_\-Motor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_aaad9fc771fb8f4348cd2f2a11e0399e9}
+
+
+If a contact button is pressed this method is called Resets motor speed to 0 and sends a \char`\"{}button pressed\char`\"{} command. 
+
+\hypertarget{Korsel__BT_8c_af77d0bef7a9606d372dc7d621f3bce72}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!USART\_\-Init@{USART\_\-Init}}
+\index{USART\_\-Init@{USART\_\-Init}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{USART\_\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void USART\_\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_af77d0bef7a9606d372dc7d621f3bce72}
+
+
+Initialize USART for serial communication. 
+
+no parity, 1 stop bit, char size 8 \hypertarget{Korsel__BT_8c_ab8c416106cf1aff4ccdb3da4860fc179}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!USART\_\-Transmit@{USART\_\-Transmit}}
+\index{USART\_\-Transmit@{USART\_\-Transmit}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{USART\_\-Transmit}]{\setlength{\rightskip}{0pt plus 5cm}void USART\_\-Transmit (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_ab8c416106cf1aff4ccdb3da4860fc179}
+
+
+Transmit a char on USART. 
+
+\hypertarget{Korsel__BT_8c_a5dd3a8989f2fe0688e6690705d753f0e}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!USART\_\-Transmit\_\-Command@{USART\_\-Transmit\_\-Command}}
+\index{USART\_\-Transmit\_\-Command@{USART\_\-Transmit\_\-Command}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{USART\_\-Transmit\_\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void USART\_\-Transmit\_\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf V24COMMAND} $\ast$}]{ command}
+\end{DoxyParamCaption}
+)}}
+\label{Korsel__BT_8c_a5dd3a8989f2fe0688e6690705d753f0e}
+
+
+Transmit a package consisting of a header and a value on USART. 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{Korsel__BT_8c_ad28d914a812dcb1f811412562d752698}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected@{LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected}}
+\index{LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected@{LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected} = false}}
+\label{Korsel__BT_8c_ad28d914a812dcb1f811412562d752698}
+
+
+true if last package received was the protocol header LEFT\_\-MOTOR\_\-SPEED\_\-BACKWARD 
+
+\hypertarget{Korsel__BT_8c_a7432312cb69c802bd3e59006f0325c50}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected@{LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected}}
+\index{LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected@{LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected} = false}}
+\label{Korsel__BT_8c_a7432312cb69c802bd3e59006f0325c50}
+
+
+true if last package received was the protocol header LEFT\_\-MOTOR\_\-SPEED\_\-FORWARD 
+
+\hypertarget{Korsel__BT_8c_a971bcbb01204fee2d69c098b337f2da7}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected@{RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected}}
+\index{RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected@{RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD\_\-headerDetected} = false}}
+\label{Korsel__BT_8c_a971bcbb01204fee2d69c098b337f2da7}
+
+
+true if last package received was the protocol header RIGHT\_\-MOTOR\_\-SPEED\_\-BACKWARD 
+
+\hypertarget{Korsel__BT_8c_a6dc3e377f49c2dea6f0f3e82020a798d}{
+\index{Korsel\_\-BT.c@{Korsel\_\-BT.c}!RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected@{RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected}}
+\index{RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected@{RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected}!Korsel_BT.c@{Korsel\_\-BT.c}}
+\subsubsection[{RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD\_\-headerDetected} = false}}
+\label{Korsel__BT_8c_a6dc3e377f49c2dea6f0f3e82020a798d}
+
+
+true if last package received was the protocol header RIGHT\_\-MOTOR\_\-SPEED\_\-FORWARD 
+

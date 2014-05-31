@@ -1,0 +1,87 @@
+\indexentry{V24Command@{V24Command}|hyperpage}{5}
+\indexentry{V24Command@{V24Command}!command@{command}|hyperpage}{5}
+\indexentry{command@{command}!V24Command@{V24Command}|hyperpage}{5}
+\indexentry{V24Command@{V24Command}!data@{data}|hyperpage}{5}
+\indexentry{data@{data}!V24Command@{V24Command}|hyperpage}{5}
+\indexentry{/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\discretionary {-}{}{}attiny2313/src/Korsel\_\discretionary {-}{}{}BT.c@{/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\discretionary {-}{}{}attiny2313/src/Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{7}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!button\_\discretionary {-}{}{}left@{button\_\discretionary {-}{}{}left}|hyperpage}{9}
+\indexentry{button\_\discretionary {-}{}{}left@{button\_\discretionary {-}{}{}left}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!button\_\discretionary {-}{}{}middle@{button\_\discretionary {-}{}{}middle}|hyperpage}{9}
+\indexentry{button\_\discretionary {-}{}{}middle@{button\_\discretionary {-}{}{}middle}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!button\_\discretionary {-}{}{}right@{button\_\discretionary {-}{}{}right}|hyperpage}{9}
+\indexentry{button\_\discretionary {-}{}{}right@{button\_\discretionary {-}{}{}right}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!button\_\discretionary {-}{}{}top@{button\_\discretionary {-}{}{}top}|hyperpage}{9}
+\indexentry{button\_\discretionary {-}{}{}top@{button\_\discretionary {-}{}{}top}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!F\_\discretionary {-}{}{}CPU@{F\_\discretionary {-}{}{}CPU}|hyperpage}{9}
+\indexentry{F\_\discretionary {-}{}{}CPU@{F\_\discretionary {-}{}{}CPU}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!motor\_\discretionary {-}{}{}left\_\discretionary {-}{}{}direction@{motor\_\discretionary {-}{}{}left\_\discretionary {-}{}{}direction}|hyperpage}{9}
+\indexentry{motor\_\discretionary {-}{}{}left\_\discretionary {-}{}{}direction@{motor\_\discretionary {-}{}{}left\_\discretionary {-}{}{}direction}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!motor\_\discretionary {-}{}{}right\_\discretionary {-}{}{}direction@{motor\_\discretionary {-}{}{}right\_\discretionary {-}{}{}direction}|hyperpage}{9}
+\indexentry{motor\_\discretionary {-}{}{}right\_\discretionary {-}{}{}direction@{motor\_\discretionary {-}{}{}right\_\discretionary {-}{}{}direction}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!photo\_\discretionary {-}{}{}sensor@{photo\_\discretionary {-}{}{}sensor}|hyperpage}{9}
+\indexentry{photo\_\discretionary {-}{}{}sensor@{photo\_\discretionary {-}{}{}sensor}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}left@{PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}left}|hyperpage}{9}
+\indexentry{PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}left@{PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}left}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}right@{PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}right}|hyperpage}{9}
+\indexentry{PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}right@{PWM\_\discretionary {-}{}{}motor\_\discretionary {-}{}{}right}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!RXD@{RXD}|hyperpage}{9}
+\indexentry{RXD@{RXD}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!TXD@{TXD}|hyperpage}{9}
+\indexentry{TXD@{TXD}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!USART\_\discretionary {-}{}{}BAUD\_\discretionary {-}{}{}RATE@{USART\_\discretionary {-}{}{}BAUD\_\discretionary {-}{}{}RATE}|hyperpage}{9}
+\indexentry{USART\_\discretionary {-}{}{}BAUD\_\discretionary {-}{}{}RATE@{USART\_\discretionary {-}{}{}BAUD\_\discretionary {-}{}{}RATE}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!V24\_\discretionary {-}{}{}UBRR@{V24\_\discretionary {-}{}{}UBRR}|hyperpage}{9}
+\indexentry{V24\_\discretionary {-}{}{}UBRR@{V24\_\discretionary {-}{}{}UBRR}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{9}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!V24COMMAND@{V24COMMAND}|hyperpage}{10}
+\indexentry{V24COMMAND@{V24COMMAND}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!delay@{delay}|hyperpage}{10}
+\indexentry{delay@{delay}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!init\_\discretionary {-}{}{}io@{init\_\discretionary {-}{}{}io}|hyperpage}{10}
+\indexentry{init\_\discretionary {-}{}{}io@{init\_\discretionary {-}{}{}io}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!ISR@{ISR}|hyperpage}{10}
+\indexentry{ISR@{ISR}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!ISR@{ISR}|hyperpage}{10}
+\indexentry{ISR@{ISR}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!main@{main}|hyperpage}{10}
+\indexentry{main@{main}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!pwm@{pwm}|hyperpage}{10}
+\indexentry{pwm@{pwm}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!setup\_\discretionary {-}{}{}interrupt@{setup\_\discretionary {-}{}{}interrupt}|hyperpage}{10}
+\indexentry{setup\_\discretionary {-}{}{}interrupt@{setup\_\discretionary {-}{}{}interrupt}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!Stop\_\discretionary {-}{}{}Motor@{Stop\_\discretionary {-}{}{}Motor}|hyperpage}{10}
+\indexentry{Stop\_\discretionary {-}{}{}Motor@{Stop\_\discretionary {-}{}{}Motor}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!USART\_\discretionary {-}{}{}Init@{USART\_\discretionary {-}{}{}Init}|hyperpage}{10}
+\indexentry{USART\_\discretionary {-}{}{}Init@{USART\_\discretionary {-}{}{}Init}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{10}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!USART\_\discretionary {-}{}{}Transmit@{USART\_\discretionary {-}{}{}Transmit}|hyperpage}{11}
+\indexentry{USART\_\discretionary {-}{}{}Transmit@{USART\_\discretionary {-}{}{}Transmit}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{11}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!USART\_\discretionary {-}{}{}Transmit\_\discretionary {-}{}{}Command@{USART\_\discretionary {-}{}{}Transmit\_\discretionary {-}{}{}Command}|hyperpage}{11}
+\indexentry{USART\_\discretionary {-}{}{}Transmit\_\discretionary {-}{}{}Command@{USART\_\discretionary {-}{}{}Transmit\_\discretionary {-}{}{}Command}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{11}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected}|hyperpage}{11}
+\indexentry{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{11}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected}|hyperpage}{11}
+\indexentry{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{11}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected}|hyperpage}{11}
+\indexentry{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD\_\discretionary {-}{}{}headerDetected}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{11}
+\indexentry{Korsel\_\discretionary {-}{}{}BT.c@{Korsel\_\discretionary {-}{}{}BT.c}!RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected}|hyperpage}{11}
+\indexentry{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD\_\discretionary {-}{}{}headerDetected}!Korsel_BT.c@{Korsel\_\discretionary {-}{}{}BT.c}|hyperpage}{11}
+\indexentry{/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\discretionary {-}{}{}attiny2313/src/v24\_\discretionary {-}{}{}commands.h@{/home/steffen/Dropbox/Bachelorarbeit/Programmierung/Korsel\_\discretionary {-}{}{}attiny2313/src/v24\_\discretionary {-}{}{}commands.h}|hyperpage}{11}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!BUTTON\_\discretionary {-}{}{}PRESSED@{BUTTON\_\discretionary {-}{}{}PRESSED}|hyperpage}{12}
+\indexentry{BUTTON\_\discretionary {-}{}{}PRESSED@{BUTTON\_\discretionary {-}{}{}PRESSED}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!FRONT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{FRONT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}|hyperpage}{12}
+\indexentry{FRONT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{FRONT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!LEFT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{LEFT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}|hyperpage}{12}
+\indexentry{LEFT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{LEFT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD}|hyperpage}{12}
+\indexentry{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD}|hyperpage}{12}
+\indexentry{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD@{LEFT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!PHOTO\_\discretionary {-}{}{}SENSOR@{PHOTO\_\discretionary {-}{}{}SENSOR}|hyperpage}{12}
+\indexentry{PHOTO\_\discretionary {-}{}{}SENSOR@{PHOTO\_\discretionary {-}{}{}SENSOR}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!RIGHT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{RIGHT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}|hyperpage}{12}
+\indexentry{RIGHT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{RIGHT\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD}|hyperpage}{12}
+\indexentry{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}BACKWARD}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD}|hyperpage}{12}
+\indexentry{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD@{RIGHT\_\discretionary {-}{}{}MOTOR\_\discretionary {-}{}{}SPEED\_\discretionary {-}{}{}FORWARD}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}
+\indexentry{v24\_\discretionary {-}{}{}commands.h@{v24\_\discretionary {-}{}{}commands.h}!TOP\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{TOP\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}|hyperpage}{12}
+\indexentry{TOP\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED@{TOP\_\discretionary {-}{}{}BUTTON\_\discretionary {-}{}{}PRESSED}!v24_commands.h@{v24\_\discretionary {-}{}{}commands.h}|hyperpage}{12}

@@ -1,0 +1,112 @@
+<class-diagram version="1.0.1" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="sp.KorselControl.KorselControl.AccelerometerListener" 
+    project="KorselControl" file="/KorselControl/src/sp/KorselControl/KorselControl.java" binary="false">    
+    <position x="179" y="512" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="sp.KorselControl.KorselControl" project="KorselControl" 
+    file="/KorselControl/src/sp/KorselControl/KorselControl.java" binary="false">    
+    <position x="507" y="321" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="sp.KorselControl.KorselControl.ConnectBT" 
+    project="KorselControl" file="/KorselControl/src/sp/KorselControl/KorselControl.java" binary="false">    
+    <position x="180" y="347" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="4" corner="BOTTOM_RIGHT" language="java" name="sp.KorselControl.KorselControl.ClickListener" 
+    project="KorselControl" file="/KorselControl/src/sp/KorselControl/KorselControl.java" binary="false">    
+    <position x="179" y="210" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="5" corner="BOTTOM_RIGHT" language="java" name="sp.KorselControl.KorselControl.TouchListener" 
+    project="KorselControl" file="/KorselControl/src/sp/KorselControl/KorselControl.java" binary="false">    
+    <position x="180" y="90" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="sp.KorselControl.KorselBluetoothSerial" 
+    project="KorselControl" file="/KorselControl/src/sp/KorselControl/KorselBluetoothSerial.java" binary="false">    
+    <position x="831" y="193" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" corner="BOTTOM_RIGHT" language="java" name="sp.KorselControl.DeviceListActivity" project="KorselControl" 
+    file="/KorselControl/src/sp/KorselControl/DeviceListActivity.java" binary="false">    
+    <position x="830" y="494" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association>    
+    <end type="SOURCE" nodeId="2" navigable="false">      
+      <attribute name="myTouchListener"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <end type="SOURCE" nodeId="2" navigable="false">      
+      <attribute name="btKorsel"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting>    
+    <end type="SOURCE" nodeId="2"/>    
+    <end type="TARGET" nodeId="4"/>  
+  </nesting>  
+  <nesting>    
+    <end type="SOURCE" nodeId="2"/>    
+    <end type="TARGET" nodeId="1"/>  
+  </nesting>  
+  <nesting>    
+    <end type="SOURCE" nodeId="2"/>    
+    <end type="TARGET" nodeId="5"/>  
+  </nesting>  
+  <association>    
+    <end type="SOURCE" nodeId="2" navigable="false">      
+      <attribute name="acc"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <end type="SOURCE" nodeId="2" navigable="false">      
+      <attribute name="myClickListener"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting>    
+    <end type="SOURCE" nodeId="2"/>    
+    <end type="TARGET" nodeId="3"/>  
+  </nesting>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

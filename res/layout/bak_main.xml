@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    
+    android:background="@drawable/bg"
+    
+    >
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    
+    >
+    
+    
+    	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"
+		    >
+			    
+			   	<!-- Main -->
+			   	
+			   	<TextView android:layout_width="wrap_content" android:text="@string/hello" android:id="@+id/xValue" android:layout_height="wrap_content"></TextView>
+	    
+				<TextView  
+					android:id="@+id/yValue"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content" 
+				    android:text="@string/hello"
+				    />
+				    
+				<TextView  
+					android:id="@+id/zValue"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content" 
+				    android:text="@string/hello"
+				    />
+				    
+				<ImageView android:id="@+id/ImageView01" android:layout_width="200dp" android:layout_height="200dp"></ImageView>	 
+				
+				    
+			</LinearLayout>
+	
+			
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"
+		    >
+		    
+			    <ImageView android:id="@+id/connectButton" android:layout_width="100dp" android:layout_height="100dp"></ImageView>
+			    
+			    <include android:id="@+id/sim" layout="@layout/robot_sim" />
+				
+				<com.tokaracamara.android.verticalslidevar.VerticalProgressBar
+					android:id="@+id/yValueBar"
+				    android:progressDrawable="@drawable/progress_vertical"
+				    android:layout_height="fill_parent" android:layout_width="10dp" android:max="100" android:progress="50"/>
+						    
+		    
+			</LinearLayout>
+    
+    
+    
+	</LinearLayout>
+	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    
+    >
+    
+  		
+    	<ProgressBar android:id="@+id/xValueBar" android:layout_width="fill_parent" android:layout_height="10dp" style="?android:attr/progressBarStyleHorizontal" android:max="100" android:progress="50"></ProgressBar>
+    
+	</LinearLayout>
+    
+    
+    
+    
+
+
+
+</LinearLayout>
+
+
+    
+
+
+
+
+
+
+
+
+
+
