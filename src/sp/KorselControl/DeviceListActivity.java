@@ -61,7 +61,7 @@ public class DeviceListActivity extends Activity {
         // Set result CANCELED in case the user backs out
         setResult(Activity.RESULT_CANCELED);
         
-        Toast.makeText(this, "Pair your device in Bluetooth settings to make it show up here.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Pair your Korsel in Bluetooth settings to make it show up here. (Code: 1234)", Toast.LENGTH_LONG).show();
         
 
         // Initialize array adapter for already paired devices

@@ -45,12 +45,12 @@ public class KorselControl extends Activity {
 	/**
 	 * Tag for Logging
 	 */
-    private static final String TAG = "KorselControl";
+    public static final String TAG = "KorselControl";
     
     /**
      * Determines if debugging is enabled
      */
-    private static final boolean D = true;
+    public static final boolean D = true;
     
     /**
      * Intent request code for Device Discovery
@@ -106,6 +106,8 @@ public class KorselControl extends Activity {
     private ImageView autoButtonView;
     private ImageView auxButtonView;
     private ImageView debugButtonView;
+    
+    private ImageView sensorStatusView;
     
     
     //debug views
@@ -475,7 +477,7 @@ public class KorselControl extends Activity {
             //aux button
             if(v.getId() == R.id.auxButton){
                     
-                    
+            	
                     
                     if(event.getAction() == MotionEvent.ACTION_DOWN){
                     	
@@ -583,6 +585,8 @@ public class KorselControl extends Activity {
 	        debugButtonView = (ImageView) findViewById(R.id.debugButton);
 	        debugButtonView.setImageResource(R.drawable.buttons_05);  
 	        debugButtonView.setOnTouchListener(myTouchListener);
+	        
+	        sensorStatusView = (ImageView) findViewById(R.id.sensorStateImage);
 
         
 	    //init BT
@@ -619,7 +623,7 @@ public class KorselControl extends Activity {
     	super.onStart();
     	
     	//Instantiate Korsel bluetooth class
-        btKorsel = new KorselBluetoothSerial();
+        btKorsel = new KorselBluetoothSerial(this);
                  
         //Load MAC from settings
         
@@ -770,7 +774,16 @@ public class KorselControl extends Activity {
 	
     }
    
-   /**
+   public void updateSensorImage(Boolean state) {
+	
+	   if(state){
+		   sensorStatusView.setImageResource(R.drawable.buttons_04);
+	   }else{
+		   sensorStatusView.setImageResource(R.drawable.buttons_activated_04);
+	   }
+}
+
+/**
     * Updates the Settings Dialog
     */
    private void updateSettings(){
@@ -867,7 +880,7 @@ public class KorselControl extends Activity {
      * @see android.app.Activity#onActivityResult(int, int, android.content.Intent)
      */
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(D) Log.d(TAG, "onActivityResult " + resultCode);
+        if(KorselControl.D) Log.d(KorselControl.TAG, "onActivityResult " + resultCode);
         switch (requestCode) {
         case REQUEST_CONNECT_DEVICE:
             // When DeviceListActivity returns with a device to connect

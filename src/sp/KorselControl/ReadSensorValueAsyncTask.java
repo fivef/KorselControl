@@ -6,99 +6,132 @@
 
 package sp.KorselControl;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.os.AsyncTask;
-public class ReadSensorValueAsyncTask extends AsyncTask<Void, Double, Double> {
+public class ReadSensorValueAsyncTask extends AsyncTask<Void, Boolean, Boolean> {
 
 	KorselControl korselControl;
 
 	boolean abort = false;
 
-	double sensorState;
+	private InputStream input;
+	
+	
+		
+	private boolean photoSensor = false;
 
 
-	public ReadSensorValueAsyncTask(KorselControl activity) {
+	public ReadSensorValueAsyncTask(KorselControl activity, InputStream inputStream) {
 
 		this.korselControl = activity;
+		
+		this.input = inputStream;
 
+	}
+	
+
+	/**
+	 * @return the photoSensor
+	 */
+	public boolean isPhotoSensor() {
+		return photoSensor;
 	}
 
 	@Override
-	protected Double doInBackground(Void... params) {
+	protected Boolean doInBackground(Void... params) {
+		
+		int readint = 0;
 
 		while (!abort) {
 
 			try {
-
-				volts = drinkMixer.getAnalogIO().getVoltage(4);
-
-			} catch (EthernetControlException e) {
-
-				System.out.println("ReadInputValues: No Connection");
-
-			} catch (java.lang.StringIndexOutOfBoundsException e) {
-
-				System.out
-						.println("ReadInputValues: No Connection (StringIndexOutofBoundsException");
-			} catch (java.lang.NullPointerException e) {
-
-				System.out
-						.println("ReadInputValues: No Connection (NullPointerException)");
-			} catch (java.lang.NumberFormatException e) {
-
-				System.out
-						.println("ReadInputValues: No Connection (NumberFormatException)");
+				readint = input.read();
+				
+				
+			} catch (IOException e) {
+				
+				System.out.println("\n Error: Connection to Korsel lost. \n");
+				//e.printStackTrace();
+				abort = true;
+				return false;
 			}
-
+		
+			//If photo sensor command header received
 			
-			
-
-			
-
-				double value = volts;
-
+			if(readint == KorselBluetoothSerial.PHOTO_SENSOR_COMMAND){	
+				/*
+				System.out.println("***Start***\n");
 				
+				System.out.println("Char: " + (char)readint + "\n");
+				System.out.println("Int: " + readint + "\n");
+				String binary = Integer.toBinaryString(readint);
 				
-				value = value - DrinkMixer.PRESSURE_SENSOR_OFFSET;
-
-				value = value / 10;
-
-				if (value < 0) {
-					value = 0.0;
+				System.out.println("Binary: " + binary + "\n");
+				*/
+				
+				try {
+					readint = input.read();
+				} catch (IOException e) {
+					
+					System.out.println("\n Error: Connection to Korsel lost. \n");
+					abort = true;
+					return false;
 				}
 				
-				//only start/stop compressor if pressure control is enabled
-				if(drinkMixer.isPressureControlEnabled()){
+				if(readint != '\n'){
+					/*
+					System.out.println("Char: " + (char)readint + "\n");
+					System.out.println("Int: " + readint + "\n");
 					
-					if(value >= drinkMixer.getPressureSetPoint())	{
+					String binary = Integer.toBinaryString(readint);
+					
+					System.out.println("Binary: " + binary + "\n");
+					*/
+					
+					if(readint == 1){
 						
+						photoSensor = true;
 						
-							drinkMixer.closeValve(DrinkMixer.COMPRESSOR_PIN);
+				
+					}
+					
+					if(readint == 0){
+						
+						photoSensor = false;
 					
 					}
 					
-					if(value <= drinkMixer.getPressureSetPoint() - DrinkMixer.PRESSURE_SENSOR_HYSTERESIS ){
-						
-					
-							drinkMixer.openValve(DrinkMixer.COMPRESSOR_PIN);
-					
-					}
+					System.out.println("Photosensor: " + photoSensor + "\n");
 					
 					
 				}
 				
-				DecimalFormat df = new DecimalFormat("#.####");
-				
-				String valueString = df.format(value);
-				
-				System.out.println(valueString);
+				//System.out.println("***Stop***\n");
 			
 			
-			publishProgress(value);
+			}else{
+				
+				if(readint != -1){
+				System.out.println("***Start***\n");
+				System.out.println("unknown command\n");
+				System.out.println("Char: " + (char)readint + "\n");
+				System.out.println("Int: " + readint + "\n");
+				String binary = Integer.toBinaryString(readint);
+				
+				System.out.println("Binary: " + binary + "\n");
+				System.out.println("***Stop***\n");
+				}
+			}
+	
+	      
+			
+			
+			publishProgress(photoSensor);
 
 			try {
-				Thread.sleep(DrinkMixer.PRESSURE_SENSOR_SAMPLING_PRERIOD);
-				
-				//TODO: make sleep time adjustable in settings
+				Thread.sleep(10);
 
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -106,31 +139,28 @@ public class ReadSensorValueAsyncTask extends AsyncTask<Void, Double, Double> {
 
 			if (isCancelled()) {
 
-				return 0.0;
+				return false;
 			}
 
 		}
 
-		return 0.0;
+		return false;
 
 	}
 
 	@Override
-	protected void onPostExecute(Double result) {
+	protected void onPostExecute(Boolean result) {
 
 		super.onPostExecute(result);
 	}
 
 	@Override
-	protected void onProgressUpdate(Double... values) {
+	protected void onProgressUpdate(Boolean... values) {
 
-		if (activity.settingsFragment != null
-				&& activity.settingsFragment.isVisible()) {
-
-			DecimalFormat df = new DecimalFormat("#.####");
-			
-			activity.settingsFragment.setPressureValue(df.format(values[0]));
-		}
+	
+		
+		korselControl.updateSensorImage(values[0]);
+		
 
 		super.onProgressUpdate(values);
 	}
