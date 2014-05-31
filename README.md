@@ -1,6 +1,7 @@
 ##KorselControl
-Kosel Control is a Android software to remotely control a Korsel robot via a smartphone's accellerometer.
-Because of the simple protocol other Bluetooth enabled robots can be made compatible with this app.
+Korsel Control is a Android software to remotely control a Korsel robot via a smartphone's accelerometer.
+Because of the simple protocol other Bluetooth enabled robots can easily be made compatible with this app.
+The C-code for the Bluetooth Korsel can be cound in the folder KorselEmbeddedSoftwareNewKorselVersion.
 
 ###Communication protocol
 The communication is done over Bluetooth serial protocol.
@@ -23,5 +24,5 @@ These are the currently supported commands with their respecting possible values
 |                                |         |           |
 | Photo sensor state             | 0x07    | [0,1]     |
 
-All except the "Photo sensor state" are outgoing packages. While "Photo sensor state" is a value sent from the Korsel containing 0 or 1 representing the current state of the photo sensor.
-Values < 11 are reserved for the commands. So PWM values below 11 are sent as 11.
+All except the "Photo sensor state" are outgoing packages. While "Photo sensor state" is a package sent from the Korsel containing 0 or 1 representing the current state of the photo sensor.
+Values < 11 are reserved for commands. So PWM values below 11 are sent as 11.
