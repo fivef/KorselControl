@@ -44,7 +44,7 @@ public class KorselBluetoothSerial {
 
 	private boolean connected = false;
 
-	private AsyncTask<Void, Boolean, Boolean> readSensorValueAsyncTask;
+	private AsyncTask<Void, Integer, Integer> readSensorValueAsyncTask;
 
 	private BluetoothAdapter mBluetoothAdapter = null;
 	private BluetoothSocket btSocket = null;
@@ -157,6 +157,7 @@ public class KorselBluetoothSerial {
 
 			// dont' send speeds smaller than RESERVED_FOR_COMMANDS, these
 			// values are used for commands
+			/*
 			if (Math.abs(speed) <= RESERVED_FOR_COMMANDS) {
 				output.write(RESERVED_FOR_COMMANDS + 1);
 
@@ -164,6 +165,9 @@ public class KorselBluetoothSerial {
 				output.write(Math.abs(speed));
 
 			}
+			*/
+			
+			output.write(Math.abs(speed));
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

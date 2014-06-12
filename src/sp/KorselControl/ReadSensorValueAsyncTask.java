@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import android.os.AsyncTask;
-public class ReadSensorValueAsyncTask extends AsyncTask<Void, Boolean, Boolean> {
+public class ReadSensorValueAsyncTask extends AsyncTask<Void, Integer, Integer> {
 
 	KorselControl korselControl;
 
@@ -20,7 +20,7 @@ public class ReadSensorValueAsyncTask extends AsyncTask<Void, Boolean, Boolean> 
 	
 	
 		
-	private boolean photoSensor = false;
+	private int photoSensor = 0;
 
 
 	public ReadSensorValueAsyncTask(KorselControl activity, InputStream inputStream) {
@@ -35,12 +35,12 @@ public class ReadSensorValueAsyncTask extends AsyncTask<Void, Boolean, Boolean> 
 	/**
 	 * @return the photoSensor
 	 */
-	public boolean isPhotoSensor() {
+	public int getPhotoSensorValue() {
 		return photoSensor;
 	}
 
 	@Override
-	protected Boolean doInBackground(Void... params) {
+	protected Integer doInBackground(Void... params) {
 		
 		int readint = 0;
 
@@ -55,7 +55,7 @@ public class ReadSensorValueAsyncTask extends AsyncTask<Void, Boolean, Boolean> 
 				System.out.println("\n Error: Connection to Korsel lost. \n");
 				//e.printStackTrace();
 				abort = true;
-				return false;
+				return 0;
 			}
 		
 			//If photo sensor command header received
@@ -77,32 +77,14 @@ public class ReadSensorValueAsyncTask extends AsyncTask<Void, Boolean, Boolean> 
 					
 					System.out.println("\n Error: Connection to Korsel lost. \n");
 					abort = true;
-					return false;
+					return 0;
 				}
 				
 				if(readint != '\n'){
-					/*
-					System.out.println("Char: " + (char)readint + "\n");
-					System.out.println("Int: " + readint + "\n");
-					
-					String binary = Integer.toBinaryString(readint);
-					
-					System.out.println("Binary: " + binary + "\n");
-					*/
-					
-					if(readint == 1){
-						
-						photoSensor = true;
-						
+			
 				
-					}
-					
-					if(readint == 0){
+					photoSensor = readint;
 						
-						photoSensor = false;
-					
-					}
-					
 					System.out.println("Photosensor: " + photoSensor + "\n");
 					
 					
@@ -139,27 +121,27 @@ public class ReadSensorValueAsyncTask extends AsyncTask<Void, Boolean, Boolean> 
 
 			if (isCancelled()) {
 
-				return false;
+				return 0;
 			}
 
 		}
 
-		return false;
+		return 0;
 
 	}
 
 	@Override
-	protected void onPostExecute(Boolean result) {
+	protected void onPostExecute(Integer result) {
 
 		super.onPostExecute(result);
 	}
 
 	@Override
-	protected void onProgressUpdate(Boolean... values) {
+	protected void onProgressUpdate(Integer... values) {
 
 	
 		
-		korselControl.updateSensorImage(values[0]);
+		korselControl.updateSensorInfo(values[0]);
 		
 
 		super.onProgressUpdate(values);

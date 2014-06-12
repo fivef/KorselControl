@@ -15,14 +15,14 @@ These are the currently supported commands with their respecting possible values
 
 | MEANING                        | COMMAND | VALUE     |
 |--------------------------------|---------|-----------|
-| Set left motor forward speed   | 0x01    | [11..255] |
-| Set left motor backward speed  | 0x02    | [11..255] |
-| Set right motor forward speed  | 0x03    | [11..255] |
-| Set right motor backward speed | 0x04    | [11..255] |
+| Set left motor forward speed   | 0x01    | [0..255] |
+| Set left motor backward speed  | 0x02    | [0..255] |
+| Set right motor forward speed  | 0x03    | [0..255] |
+| Set right motor backward speed | 0x04    | [0..255] |
 | Set line following mode        | 0x05    | [0,1]     |
 | Auxiliary for custom usage     | 0x06    | 0         |
 |                                |         |           |
-| Photo sensor state             | 0x07    | [0,1]     |
+| Photo sensor state             | 0x07    | [0..255]  |
 
-All except the "Photo sensor state" are outgoing packages. While "Photo sensor state" is a package sent from the Korsel containing 0 or 1 representing the current state of the photo sensor.
-Values < 11 are reserved for commands. So PWM values below 11 are sent as 11.
+All except the "Photo sensor state" are outgoing packages. While "Photo sensor state" is a package 
+sent from the Korsel containing a value representing the current value of the photo sensor (0 means white, 255 black). 

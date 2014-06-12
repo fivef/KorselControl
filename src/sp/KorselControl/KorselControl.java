@@ -106,16 +106,14 @@ public class KorselControl extends Activity {
     private ImageView autoButtonView;
     private ImageView auxButtonView;
     private ImageView debugButtonView;
-    
-    private ImageView sensorStatusView;
-    
-    
+
     //debug views
     private TextView xValueTextView;
     private TextView yValueTextView;
     private TextView zValueTextView;
     private TextView rollTextView;
     private TextView pitchTextView;
+    private TextView sensorTextView;
     
     /**
      * Settings Dialog
@@ -282,7 +280,7 @@ public class KorselControl extends Activity {
 	        	rollTextView.setText("L: " + motorLspeed); 
 			    pitchTextView.setText("R: " + motorRspeed);
 	        	
-	        	refreshSim(motorLspeed, motorRspeed);
+	        	updatedDebug(motorLspeed, motorRspeed);
 	        	
 	        	//TODO check in btKorsel if connected to prevent freeze/error
 	        	
@@ -558,6 +556,7 @@ public class KorselControl extends Activity {
 	        zValueTextView = (TextView) myDebugDialog.findViewById(R.id.zValue);
 	        rollTextView = (TextView) myDebugDialog.findViewById(R.id.roll);
 	        pitchTextView = (TextView) myDebugDialog.findViewById(R.id.pitch);
+	        sensorTextView = (TextView) myDebugDialog.findViewById(R.id.sensor);
 
 	        myTouchListener = new TouchListener();
 	        myClickListener = new ClickListener();
@@ -585,8 +584,7 @@ public class KorselControl extends Activity {
 	        debugButtonView = (ImageView) findViewById(R.id.debugButton);
 	        debugButtonView.setImageResource(R.drawable.buttons_05);  
 	        debugButtonView.setOnTouchListener(myTouchListener);
-	        
-	        sensorStatusView = (ImageView) findViewById(R.id.sensorStateImage);
+
 
         
 	    //init BT
@@ -774,16 +772,8 @@ public class KorselControl extends Activity {
 	
     }
    
-   public void updateSensorImage(Boolean state) {
-	
-	   if(state){
-		   sensorStatusView.setImageResource(R.drawable.buttons_04);
-	   }else{
-		   sensorStatusView.setImageResource(R.drawable.buttons_activated_04);
-	   }
-}
 
-/**
+   /**
     * Updates the Settings Dialog
     */
    private void updateSettings(){
@@ -798,6 +788,14 @@ public class KorselControl extends Activity {
 		sensitivityRollBar.setProgress(10 - maxRoll); //flip direction
 	   
    }
+   
+   
+    void updateSensorInfo(int value){
+    	
+    	sensorTextView.setText("S: " + format.format(value)); 
+    	
+    	
+    }
     
    /**
     * Creates the Debug Dialog
@@ -850,7 +848,7 @@ public class KorselControl extends Activity {
     /**
      * updates the Debug Dialog
      */
-    private void refreshSim(int motorLspeed, int motorRspeed){
+    private void updatedDebug(int motorLspeed, int motorRspeed){
     	
     	VerticalProgressBar leftForward = (VerticalProgressBar) myDebugDialog.findViewById(R.id.LeftForwardBar);
     	VerticalProgressBarTopDown leftBackward =(VerticalProgressBarTopDown) myDebugDialog.findViewById(R.id.LeftBackwardBar);
